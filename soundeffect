@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sound Effect Project#1 </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Press your keyboard for the sound effect!</h1>
+
+<div class='keys'>
+	<div class = 'key' data-key = '65' >
+		<kbd>Press: A</kbd> <br>
+		<span class='sound'>Fire Crackers</span>
+	</div>
+	<div class = 'key' data-key = '83' >
+		<kbd>Press: S</kbd> <br>
+		<span class='sound'>Morning!</span>
+	</div>
+	<div class = 'key' data-key = '68' >
+		<kbd>Press: D</kbd> <br>
+		<span class='sound'>Laughing</span>
+	</div>
+	<div class = 'key' data-key = '70' >
+		<kbd>Press: F</kbd> <br>
+		<span class='sound'>Chirping</span>
+	</div>
+	<div class = 'key' data-key = '71' >
+		<kbd>Press: G</kbd> <br>
+		<span class='sound'>Slurp</span>
+	</div>
+	<div class = 'key' data-key = '72' >
+		<kbd>Press: H</kbd> <br>
+		<span class='sound'>Fart</span>
+	</div>
+	<div class = 'key' data-key = '74' >
+		<kbd>Press: J</kbd> <br>
+		<span class='sound'>Punch</span>
+	</div>
+	<div class = 'key' data-key = '75' >
+		<kbd>Press: K</kbd> <br>
+		<span class='sound'>Bubbling</span>
+	</div>
+	<div class = 'key' data-key = '76' >
+		<kbd>Press: L</kbd> <br>
+		<span class='sound'>Sneeze</span>
+	</div>
+
+</div>
+
+<audio data-key="65" src="firecraker.wav"> </audio>
+<audio data-key="83" src="goodmorning.wav"> </audio>
+<audio data-key="68" src="laugh.wav"> </audio>
+<audio data-key="70" src="bird.wav"> </audio>
+<audio data-key="71" src="slurp.wav"> </audio>
+<audio data-key="72" src="fart.wav"> </audio>
+<audio data-key="74" src="punch.wav"> </audio>
+<audio data-key="75" src="bubbling.wav"> </audio>
+<audio data-key="76" src="babysneeze.wav"> </audio>
+
+
+
+<script type="text/javascript">
+window.addEventListener('keydown',function(e){
+	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); //e means the value of addEventListener
+	const key= document.querySelector(`.key[data-key="${e.keyCode}"]`);
+	if (!audio) return; // stop the function from running!
+	audio.currentTime = 0; //rewmidn to the start
+	audio.play();
+	key.classList.add('playing');
+});
+function removeTransition(e){
+if (e.propertyName !== 'transform') return; 
+this.classList.remove('playing')}
+
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend',removeTransition))
+</script>
+
+<hr>
+<footer> 2019 April 11th. Project#1</footer>
+</body>
+
+
+<!-- Comment: resouce used soundbible.com & background from unsplash.com & codes for javascript are copied from the WesBos Day1 challenge. -->
+</html>
