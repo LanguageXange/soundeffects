@@ -1,59 +1,44 @@
-
-body,
-html {
-  width: 100%;
-  height: 100%; 
+body{ 
+background-image: url(leoneventerkeyboard.jpg);
+background-size: cover;
+background-color: rgba(255, 226, 226, 0.7);
+background-blend-mode:screen;
+}
+h1{
+text-align:center;
+font-size: 26px;
+margin-top: 2em;
+}
+.key{
+display: inline-grid;
+height:90px;
+width:120px;
+text-align: center;
+border: 3px solid black;
+border-radius: 4px;
+margin-left:150px;
+margin-top:3rem;
+margin-right:60px;
+margin-bottom: 50px;
+font-size:20px;
+padding:8px 8px;
+font-weight: 700;
+font-family: Courier, Georgia
+}
+.playing{
+	transform: scale(1.2);
+	border-color: #AEE485;
+	transition: all 0.05s
+}
+.key:hover{
+	border: 3px dashed blue;
+	color:blue;
+	cursor: no-drop;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
+footer{
+	font-size: 16px;
+	text-align: right;
+	margin-top: 15px;
+	margin-right: 20px;
 }
-
-hr {
-  max-width: 600px;
-  border-width: 3px;
-  border-color: #F05F44; 
-}
-
-.faded {
-  color: rgba(255, 255, 255, 1); 
-}
-
-header.startup {
-  background-position: center;
-  background-image: url("header.jpg");
-  background-size: cover;
-  height: 100%;
-}
-
-header.startup hr {
-  margin-top: 200px;
-  margin-bottom: 30px; 
-}
-
-header.startup h1 {
-  font-size: 2rem; 
-}
-
-.btn {
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 300px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.btn-xl {
-  padding: 1em 2em; 
-}
-
-.btn-primary {
-  background-color: #F05F44;
-  border-color: #F05F44; }
-
-.btn-primary:hover {
-  background-color: #ee4b08;
-  border-color: #ee4b08;
-  border-width: 6px;
-  cursor: pointer;
-}
-  
