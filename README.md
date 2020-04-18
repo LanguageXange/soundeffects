@@ -1,10 +1,9 @@
 ## Live demo at https://languagexange.github.io/soundeffects/
 
 - audio resouce:
-soundbible.com
+http://soundbible.com/
 
 - background image:
-unsplash.com 
+https://unsplash.com/
 
-- Code inspiration:
-JS30 Day1
+- Code inspiration:https://javascript30.com/ Day One
