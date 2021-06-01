@@ -1,9 +1,11 @@
-## Live demo at https://languagexange.github.io/soundeffects/
+## [Live demo link](https://languagexange.github.io/soundeffects/)
 
-- audio resouce:
-http://soundbible.com/
+### Audio from:
 
-- background image:
-https://unsplash.com/
+- [Sound Bible](http://soundbible.com/) --> not recommended (some audio downloads are now blocked by browser due to security issues?)
+- [Mixkit - Free sound effects](https://mixkit.co/free-sound-effects/) --> alternative
 
-- Code inspiration:https://javascript30.com/ Day One
+### Code inspiration:
+
+- [JavaScript 30 - Drum Kit Project](https://javascript30.com/)
+- [Dark Light Mode](https://codepen.io/imjuangarcia/pen/xxKLMEN)

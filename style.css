@@ -1,38 +1,75 @@
 body {
-  background-blend-mode: screen;
+  background: rgba(14, 5, 5, 0.883);
+  color: rgb(215, 250, 255);
 }
 h1 {
   text-align: center;
-  font-size: 26px;
-  margin-top: 2em;
+  font-size: 2.5em;
+  margin-top: 1em;
 }
 .keys {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4em auto;
 }
 .key {
   height: 90px;
-  width: 120px;
+  width: 150px;
   margin: 1em 1.5em;
   text-align: center;
-  border: 3px solid black;
+  border: 3px solid lightblue;
   border-radius: 4px;
   font-size: 20px;
-  padding: 8px 8px;
+  padding: 8px;
   font-weight: 700;
   font-family: Courier, Georgia;
 }
+kbd {
+  display: block;
+  margin-bottom: 10px;
+}
 .playing {
   transform: scale(1.2);
-  border-color: #aee485;
-  transition: all 0.05s;
+  border-color: orange;
+  transition: all 0.15s;
 }
-.key:hover {
-  border: 3px dashed blue;
-  color: blue;
-  cursor: no-drop;
+/* Light Dark Mode Styling */
+input[type="checkbox"] {
+  font-size: 40px;
+  position: absolute;
+  top: 1em;
+  right: 2.5em;
+  appearance: none;
+  cursor: pointer;
+  z-index: 10;
 }
+
+input[type="checkbox"]::after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: "☀️";
+}
+input[type="checkbox"]:checked::after {
+  content: "🌙";
+}
+
+.dark-mode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(238, 238, 238);
+  opacity: 0;
+  mix-blend-mode: difference;
+  /* z-index: -1; */
+  transition: all 0.8s ease-in-out;
+}
+
+input[type="checkbox"]:checked ~ .dark-mode {
+  opacity: 1;
+}
+/* Light Dark Mode Styling */

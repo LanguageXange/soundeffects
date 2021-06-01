@@ -2,70 +2,52 @@
 <html>
   <head>
     <title>Sound Effect</title>
+    <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="shortcut icon" href="./favicons/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./favicons/favicon-32x32.png"
-    />
-    <link rel="manifest" href="./favicons/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="./favicons/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <h1>Press Keyboard For the Sound Effect!</h1>
+    <h1>Sound Effects!</h1>
 
     <div class="keys">
       <div class="key" data-key="65">
-        <kbd>Press: A</kbd> <br />
+        <kbd>Press: A</kbd>
         <span class="sound">Fire Crackers</span>
       </div>
       <div class="key" data-key="83">
-        <kbd>Press: S</kbd> <br />
+        <kbd>Press: S</kbd>
         <span class="sound">Morning!</span>
       </div>
       <div class="key" data-key="68">
-        <kbd>Press: D</kbd> <br />
+        <kbd>Press: D</kbd>
         <span class="sound">Laughing</span>
       </div>
       <div class="key" data-key="70">
-        <kbd>Press: F</kbd> <br />
+        <kbd>Press: F</kbd>
         <span class="sound">Chirping</span>
       </div>
       <div class="key" data-key="71">
-        <kbd>Press: G</kbd> <br />
+        <kbd>Press: G</kbd>
         <span class="sound">Slurp</span>
       </div>
       <div class="key" data-key="72">
-        <kbd>Press: H</kbd> <br />
+        <kbd>Press: H</kbd>
         <span class="sound">Fart</span>
       </div>
       <div class="key" data-key="74">
-        <kbd>Press: J</kbd> <br />
+        <kbd>Press: J</kbd>
         <span class="sound">Punch</span>
       </div>
       <div class="key" data-key="75">
-        <kbd>Press: K</kbd> <br />
+        <kbd>Press: K</kbd>
         <span class="sound">Bubbling</span>
       </div>
-      <div class="key" data-key="76">
-        <kbd>Press: L</kbd> <br />
-        <span class="sound">Sneeze</span>
+      <div class="key" data-key="67">
+        <kbd>Press: C</kbd> <span class="sound">Coin</span>
+      </div>
+      <div class="key" data-key="77">
+        <kbd>Press: M</kbd> <span class="sound">Gaming</span>
       </div>
     </div>
-
     <audio data-key="65" src="audio/Firecraker.wav"></audio>
     <audio data-key="83" src="audio/goodmorning.wav"></audio>
     <audio data-key="68" src="audio/laugh.wav"></audio>
@@ -74,27 +56,12 @@
     <audio data-key="72" src="audio/fart.wav"></audio>
     <audio data-key="74" src="audio/punch.wav"></audio>
     <audio data-key="75" src="audio/bubbling.wav"></audio>
-    <audio data-key="76" src="audio/babysneeze.wav"></audio>
-
-    <script type="text/javascript">
-      window.addEventListener("keydown", function (e) {
-        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-        if (!audio) return;
-        audio.currentTime = 0;
-        audio.play();
-        key.classList.add("playing");
-      });
-      function removeTransition(e) {
-        // console.log(e, "what is transitioned");
-        if (e.propertyName !== "transform") return;
-        this.classList.remove("playing");
-      }
-
-      const keys = document.querySelectorAll(".key");
-      keys.forEach((key) =>
-        key.addEventListener("transitionend", removeTransition)
-      );
-    </script>
+    <audio data-key="67" src="audio/coin.wav"></audio>
+    <audio data-key="77" src="audio/game.wav"></audio>
+    <!-- add light dark mode with CSS -->
+    <input type="checkbox" />
+    <div class="dark-mode"></div>
+    <!-- add light dark mode with CSS -->
+    <script src="script.js"></script>
   </body>
 </html>
